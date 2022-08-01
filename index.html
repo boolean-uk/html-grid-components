@@ -31,18 +31,6 @@
 
       /* Write CSS Here */
 
-      .three-column-grid {
-      }
-
-      .three-column-grid__expand-two {
-      }
-
-      .five-column-grid {
-      }
-
-      .center-grid {
-      }
-
       .centered {
       }
 
@@ -50,13 +38,55 @@
       /* Practice re-using classes */
 
       .two-column-grid {
+        text-align: center;
+        display: grid;
+        align-content: center;
+        grid-template-columns: 200px 1fr;
+        gap: 10px;
       }
+
+      .logo{
+        min-width: 40px;
+        min-height: 40px;
+        padding: 4px;
+        border: 2px dotted #20b2aa;
+      }
+
+      .three-column-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .three-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 75px 1fr 75px;
+        gap: 10px;
+      }
+
+      .five-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 10px;
+      }
+
+      .center-grid {
+        display: grid;
+        align-content: center;
+        place-items: center;
+      }
+
+      .centered {
+        width: 75px;
+      }
+
+      
+
     </style>
   </head>
   <body>
     <div>
       <h2>Two Column Grid (Icon Pattern)</h2>
-      <div class="container two-column-grid__expand-two">
+      <div class="container two-column-grid">
         <div class="logo"></div>
         <div class="box expand"></div>
       </div>
