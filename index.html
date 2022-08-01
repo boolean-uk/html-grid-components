@@ -74,8 +74,22 @@
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
+
+
       .two-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
       }
+      
+      .two-column-grid .box {
+        display: grid;
+        grid-auto-flow: column;
+        column-gap: 5px;
+
+      }
+
+
     </style>
   </head>
   <body>
