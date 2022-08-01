@@ -31,26 +31,79 @@
 
       /* Write CSS Here */
 
+      .two-column-grid__expand-two {
+      display: grid;
+      grid-template-columns: 1fr 5fr;
+      gap: 5px;
+      }
+      .two-column-grid__expand-two .logo {
+        padding: 4px;
+        border: 2px dotted lightgreen
+      }
+
+
+
       .three-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px
       }
 
       .three-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 50px 1fr 50px;
+        gap: 5px
       }
 
       .five-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr ;
+        gap: 5px;
       }
 
       .center-grid {
+        display: grid;
+        place-items: center;
       }
 
+
       .centered {
+        width: 20%
       }
 
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
+
+
       .two-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
       }
+      
+      .two-column-grid .box {
+        display: grid;
+        grid-auto-flow: column;
+        column-gap: 5px;
+
+      }
+
+      .grid-grid {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-auto-flow: column;
+        gap: 5px
+      }
+      .grid-grid .box {
+        display: grid;
+        grid-auto-flow: column;
+        gap: 5px;
+      }
+
+
+
+
     </style>
   </head>
   <body>
@@ -112,7 +165,7 @@
     </div>
     <div>
       <h2>Grid within Grid #2 (Expansion)</h2>
-      <div class="container">
+      <div class="container grid-grid">
         <div class="box">
           <div class="inner-box"></div>
         </div>
