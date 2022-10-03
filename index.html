@@ -27,29 +27,60 @@
         border: 2px dotted lightgreen;
       }
 
+      .logo {
+        border: 2px dotted #20b2aa;
+      }
+
       /* Don't touch this END */
 
       /* Write CSS Here */
 
+      .two-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 5px;
+      }
+
       .three-column-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
       }
 
       .three-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 60px 1fr 60px;
+        gap: 5px;
       }
 
       .five-column-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px;
       }
 
       .center-grid {
+        display: grid;
+        place-items: center;
       }
 
       .centered {
+        width: 150px;
       }
 
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
-      .two-column-grid {
+      .two-column-grid:nth-child(1n) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+      }
+
+      .two-column-grid:nth-child(2n) {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px;
       }
     </style>
   </head>
