@@ -49,7 +49,7 @@
 
       .three-column-grid__expand-two {
         display: grid;
-        grid-template-columns: 60px 1fr 60px;
+        grid-template-columns: auto 1fr auto;
         gap: 5px;
       }
 
@@ -71,17 +71,12 @@
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
-      .two-column-grid:nth-child(1n) {
+      .two-column-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 5px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
       }
 
-      .two-column-grid:nth-child(2n) {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 5px;
-      }
     </style>
   </head>
   <body>
@@ -127,12 +122,12 @@
     <div>
       <h2>Grid within Grid #1</h2>
       <div class="container two-column-grid">
-        <div class="box">
+        <div class="box three-column-grid">
           <div class="inner-box"></div>
           <div class="inner-box"></div>
           <div class="inner-box"></div>
         </div>
-        <div class="box">
+        <div class="box five-column-grid">
           <div class="inner-box"></div>
           <div class="inner-box"></div>
           <div class="inner-box"></div>
@@ -143,14 +138,14 @@
     </div>
     <div>
       <h2>Grid within Grid #2 (Expansion)</h2>
-      <div class="container">
+      <div class="container three-column-grid__expand-two">
         <div class="box">
           <div class="inner-box"></div>
         </div>
         <div class="box expand">
           <div class="inner-box width-sm"></div>
         </div>
-        <div class="box">
+        <div class="box three-column-grid">
           <div class="inner-box"></div>
           <div class="inner-box"></div>
           <div class="inner-box"></div>
