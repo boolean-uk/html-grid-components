@@ -89,40 +89,42 @@
     .two-column-grid>.box:nth-of-type(1) {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 5px;
+
     }
 
     .two-column-grid>.box:nth-of-type(2) {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
+      column-gap: 5px;
     }
 
 
 
     /* Extension Attempt */
-    .container:nth-of-type(7) {
+    div:nth-of-type(7) > .container:nth-of-type(1) {
       display: grid;
-      grid-template-columns: 50px auto 200px;
+      grid-template-columns: 75px auto 200px;
       grid-template-areas: 
       "box expand box";
       gap: 5px;
-    }
+      }
 
-    .container:nth-of-type(7) .box.box:nth-of-type(1) {
+    div:nth-of-type(7) > .container:nth-of-type(1) > .box:nth-of-type(1) {
       display: grid;
-      /* grid-template-columns: 50px; */
+      grid-template-columns: 1fr;      
     }
 
-    .container:nth-of-type(7) .expand {
+    div:nth-of-type(7) > .container:nth-of-type(1) > .box:nth-of-type(2) {
       display: grid;
-      /* grid-template-columns: auto; */
-
+      grid-template-columns: auto;
     }
 
-    .container:nth-of-type(7) .box.box:nth-of-type(1) {
+    div:nth-of-type(7) > .container > .box:nth-of-type(3) {
       display: grid;
-      /* grid-template-columns: 200px; */
-
-    }
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 5px;
+      }
 
 
   </style>
