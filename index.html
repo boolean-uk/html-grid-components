@@ -7,50 +7,109 @@
     <title>Static Template</title>
 
     <style>
-      /* Don't touch this START */
+       /* Don't touch this START */
 
-      .container {
-        padding: 8px;
-        border: 2px dotted lightblue;
-      }
+       .container {
+         padding: 8px;
+         border: 2px dotted lightblue;
+       }
 
-      .box {
-        min-width: 40px;
-        min-height: 40px;
-        padding: 4px;
-        border: 2px dotted lightcoral;
-      }
+       .box {
+         min-width: 40px;
+         min-height: 40px;
+         padding: 4px;
+         border: 2px dotted lightcoral;
+       }
 
-      .inner-box {
-        min-width: 40px;
-        min-height: 40px;
-        border: 2px dotted lightgreen;
-      }
 
-      /* Don't touch this END */
 
-      /* Write CSS Here */
+       .inner-box {
+         min-width: 40px;
+         min-height: 40px;
+         border: 2px dotted lightgreen;
+       }
 
-      .three-column-grid {
-      }
+       /* Don't touch this END */
 
-      .three-column-grid__expand-two {
-      }
+       /* Write CSS Here */
+        .logo{
+         min-width: 40px;
+         min-height: 40px;
+         padding: 4px;
+         border: 2px dotted rgba(128, 135, 240, 0.657);
 
-      .five-column-grid {
-      }
+        }
 
-      .center-grid {
-      }
+       .three-column-grid {
+         display: grid;
+         grid-template-columns: repeat(3,1fr);
+         gap:5px
+       }
 
-      .centered {
-      }
+       .three-column-grid__expand-two {
+         display: grid;
+         grid-template-columns: 100px 3fr 100px;
+         gap :5px;
+       }
 
-      /* Grid within Grid Section */
-      /* Practice re-using classes */
+       .five-column-grid {
+         display: grid;
+         grid-template-columns: repeat(5,1fr);
+         gap:5px
+       }
+
+       .center-grid {
+         display: grid;
+         justify-content: center;
+         /* grid-template-columns: 200px; */
+
+
+       }
+
+       .centered {
+         width: 200px;
+       }
+
+       /* Grid within Grid Section */
+       /* Practice re-using classes */
 
       .two-column-grid {
+       display: grid;
+       grid-template-columns:repeat(2,1fr);
+
+       }
+       .two-column-grid .box:nth-of-type(2){
+         display: grid;
+         grid-template-columns:repeat(5,1fr);
+       }
+
+        .two-column-grid .box:first-child{
+         display: grid;
+         grid-template-columns:repeat(3,1fr);
+        }
+
+      .two-column-grid__expand-two{
+       display: grid;
+         grid-template-columns : 200px 1fr ;
+         gap:10px
       }
+
+      .mainContainer {
+        display: grid;
+        grid-template-columns: 0.5fr 6fr 2fr;
+      }
+      .shortBox {
+        display: grid;
+      }
+      .longBox {
+        display: grid;
+      }
+      .middleBox {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .
     </style>
   </head>
   <body>
@@ -112,14 +171,14 @@
     </div>
     <div>
       <h2>Grid within Grid #2 (Expansion)</h2>
-      <div class="container">
-        <div class="box">
+      <div class="container mainContainer">
+        <div class="box shortBox">
           <div class="inner-box"></div>
         </div>
-        <div class="box expand">
+        <div class="box expand longBox">
           <div class="inner-box width-sm"></div>
         </div>
-        <div class="box">
+        <div class="box middleBox">
           <div class="inner-box"></div>
           <div class="inner-box"></div>
           <div class="inner-box"></div>
