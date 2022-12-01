@@ -1,176 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Static Template</title>
 
-    <style>
-      /* Don't touch this START */
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Static Template</title>
 
-      .container {
-        padding: 8px;
-        border: 2px dotted lightblue;
-      }
+  <style>
+    /* Don't touch this START */
 
-      .box {
-        min-width: 40px;
-        min-height: 40px;
-        padding: 4px;
-        border: 2px dotted lightcoral;
-      }
+    .container {
+      padding: 8px;
+      border: 2px dotted lightblue;
+    }
 
-      .inner-box {
-        min-width: 40px;
-        min-height: 40px;
-        border: 2px dotted lightgreen;
-      }
+    .box {
+      min-width: 40px;
+      min-height: 40px;
+      padding: 4px;
+      border: 2px dotted lightcoral;
+    }
 
-      /* Don't touch this END */
+    .inner-box {
+      min-width: 40px;
+      min-height: 40px;
+      border: 2px dotted lightgreen;
+    }
 
-      /* Write CSS Here */
-
-      /* .expand{
-        grid-area: expand;
-      } */
-      
-      .two-column-grid__expand-two{
-        display: grid;
-        grid-template: 
-        "logo expand" 1fr /
-        200px 1fr;
-        column-gap: 5px;
-      }
-
-      .three-column-grid {
-        display: grid;
-        grid-template: 
-        "box box box";
-        column-gap: 5px;
-      }
-
-      .three-column-grid__expand-two {
-        display: grid;
-        grid-template-columns: 50px auto 50px;
-        gap: 5px;
-      }
-      
+    /* Don't touch this END */
     
-      .five-column-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 5px;
-      }
+    /* Write CSS Here */
+    
+    /* .expand{
+      grid-area: expand;
+    } */
+    
+    .two-column-grid__expand-two {
+      display: grid;
+      grid-template:
+      "logo expand" 1fr /
+      200px 1fr;
+      column-gap: 5px;
+    }
+    
+    .logo {
+      grid-area: logo;
+      border: 2px dotted green;
+    }
 
-      .center-grid {
-        display: grid;
-        grid-template-columns: 250px;
-        place-content: center;
-      }
+    .three-column-grid {
+      display: grid;
+      grid-template:
+        "box box box";
+      column-gap: 5px;
+    }
 
-      .centered {
-      }
+    .three-column-grid__expand-two {
+      display: grid;
+      grid-template-columns: 50px auto 50px;
+      gap: 5px;
+    }
 
-      /* Grid within Grid Section */
-      /* Practice re-using classes */
 
-      .two-column-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 5px;
-      }
-      
-      .two-column-grid > .box:nth-of-type(1) {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-      }
+    .five-column-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 5px;
+    }
 
-      .two-column-grid > .box:nth-of-type(2)  {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-      }
+    .center-grid {
+      display: grid;
+      grid-template-columns: 250px;
+      place-content: center;
+    }
 
-      .logo{
-        grid-area: logo;
-        border: 2px dotted green;
-      }
+    .centered {}
 
-      
-    </style>
-  </head>
-  <body>
-    <div>
-      <h2>Two Column Grid (Icon Pattern)</h2>
-      <div class="container two-column-grid__expand-two">
-        <div class="logo"></div>
-        <div class="box expand"></div>
+    /* Grid within Grid Section */
+    /* Practice re-using classes */
+
+    .two-column-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px;
+    }
+
+    .two-column-grid>.box:nth-of-type(1) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .two-column-grid>.box:nth-of-type(2) {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+
+
+    /* Extension Attempt */
+    .container:nth-of-type(7) {
+      display: grid;
+      grid-template-columns: 50px auto 200px;
+      grid-template-areas: 
+      "box expand box";
+      gap: 5px;
+    }
+
+    .container:nth-of-type(7) .box.box:nth-of-type(1) {
+      display: grid;
+      /* grid-template-columns: 50px; */
+    }
+
+    .container:nth-of-type(7) .expand {
+      display: grid;
+      /* grid-template-columns: auto; */
+
+    }
+
+    .container:nth-of-type(7) .box.box:nth-of-type(1) {
+      display: grid;
+      /* grid-template-columns: 200px; */
+
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div>
+    <h2>Two Column Grid (Icon Pattern)</h2>
+    <div class="container two-column-grid__expand-two">
+      <div class="logo"></div>
+      <div class="box expand"></div>
+    </div>
+  </div>
+  <div>
+    <h2>Three Column Grid</h2>
+    <div class="container three-column-grid">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+  <div>
+    <h2>Three Column Grid with Expansion</h2>
+    <div class="container three-column-grid__expand-two">
+      <div class="box"></div>
+      <div class="box expand"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+  <div>
+    <h2>Five Column Grid</h2>
+    <div class="container five-column-grid">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+  </div>
+  <div>
+    <h2>Center Grid</h2>
+    <div class="container center-grid">
+      <div class="box centered"></div>
+    </div>
+  </div>
+  <div>
+    <h2>Grid within Grid #1</h2>
+    <div class="container two-column-grid">
+      <div class="box">
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+      </div>
+      <div class="box">
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
       </div>
     </div>
-    <div>
-      <h2>Three Column Grid</h2>
-      <div class="container three-column-grid">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
+  </div>
+  <div>
+    <h2>Grid within Grid #2 (Expansion)</h2>
+    <div class="container">
+      <div class="box">
+        <div class="inner-box"></div>
+      </div>
+      <div class="box expand">
+        <div class="inner-box width-sm"></div>
+      </div>
+      <div class="box">
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
+        <div class="inner-box"></div>
       </div>
     </div>
-    <div>
-      <h2>Three Column Grid with Expansion</h2>
-      <div class="container three-column-grid__expand-two">
-        <div class="box"></div>
-        <div class="box expand"></div>
-        <div class="box"></div>
-      </div>
-    </div>
-    <div>
-      <h2>Five Column Grid</h2>
-      <div class="container five-column-grid">
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-        <div class="box"></div>
-      </div>
-    </div>
-    <div>
-      <h2>Center Grid</h2>
-      <div class="container center-grid">
-        <div class="box centered"></div>
-      </div>
-    </div>
-    <div>
-      <h2>Grid within Grid #1</h2>
-      <div class="container two-column-grid">
-        <div class="box">
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-        </div>
-        <div class="box">
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <h2>Grid within Grid #2 (Expansion)</h2>
-      <div class="container">
-        <div class="box">
-          <div class="inner-box"></div>
-        </div>
-        <div class="box expand">
-          <div class="inner-box width-sm"></div>
-        </div>
-        <div class="box">
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-        </div>
-      </div>
-    </div>
-  </body>
+  </div>
+</body>
+
 </html>
