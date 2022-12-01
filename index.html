@@ -31,7 +31,19 @@
 
       /* Write CSS Here */
 
+      .two-column-grid__expand-two{
+        display: grid;
+        grid-template: 
+        "logo expand" 1fr /
+        200px 1fr;
+        column-gap: 5px;
+      }
+
       .three-column-grid {
+        display: grid;
+        grid-template: 
+        "box box box";
+        column-gap: 5px;
       }
 
       .three-column-grid__expand-two {
@@ -51,6 +63,16 @@
 
       .two-column-grid {
       }
+
+      .logo{
+        grid-area: logo;
+        border: 2px dotted green;
+      }
+
+      .expand{
+        grid-area: expand;
+      }
+      
     </style>
   </head>
   <body>
