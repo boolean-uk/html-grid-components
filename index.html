@@ -31,6 +31,10 @@
 
       /* Write CSS Here */
 
+      /* .expand{
+        grid-area: expand;
+      } */
+      
       .two-column-grid__expand-two{
         display: grid;
         grid-template: 
@@ -48,16 +52,10 @@
 
       .three-column-grid__expand-two {
         display: grid;
-        grid-template:
-        "box expand box" /
-        50px auto 50px;
-        column-gap: 5px;
+        grid-template-columns: 50px auto 50px;
       }
+      
     
-      .box .expand {
-        grid-area: expand;
-      }
-
       .five-column-grid {
       }
 
@@ -78,9 +76,6 @@
         border: 2px dotted green;
       }
 
-      .expand{
-        grid-area: expand;
-      }
       
     </style>
   </head>
