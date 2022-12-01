@@ -31,6 +31,24 @@
 
       /* Write CSS Here */
 
+      .two-column-grid__expand-two {
+        display: grid;
+        grid-template:
+        "logo header" 52px/
+        200px 1fr
+        ;
+        gap: 5px
+      }
+
+      .logo {
+        grid-area: logo;
+        border: dotted 2px lightgreen;
+      }
+
+      .box.expand {
+        grid-area: header;
+      }
+
       .three-column-grid {
       }
 
