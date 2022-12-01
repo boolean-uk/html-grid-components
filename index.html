@@ -31,25 +31,57 @@
 
       /* Write CSS Here */
 
+      .two-column-grid__expand-two .logo {
+        min-width: 40px;
+        min-height: 40px;
+        padding: 4px;
+        border: 2px dotted lightseagreen;
+      }
+
+      .two-column-grid__expand-two {
+        display: grid;
+        gap: 5px;
+        grid-template:
+          "logo  box-expand" 1fr/
+          1fr 9fr;
+      }
+
       .three-column-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
       }
 
       .three-column-grid__expand-two {
+        display: grid;
+        gap: 5px;
+        grid-template-columns: 1fr 8fr 1fr;
+        grid-template-rows: auto;
       }
 
       .five-column-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px;
       }
 
       .center-grid {
+        display: grid;
+        justify-content: center;
+        place-items: center;
       }
 
       .centered {
+        width:200px;
       }
 
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
       .two-column-grid {
+        display: grid;
+        grid-template-columns: repeat(2,100px)
+        gap: 5px;
       }
     </style>
   </head>
