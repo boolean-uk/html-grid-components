@@ -50,25 +50,87 @@
       }
 
       .three-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
       }
 
       .three-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 50px 1fr 50px;
+        grid-template-areas: "mini1 bigMid mini2";
+        gap: 5px;
+      }
+
+      .three-column-grid__expand-two > .box:first-child {
+        grid-area: mini1;
+      }
+
+      .three-column-grid__expand-two > .box:nth-child(2) {
+        grid-area: bigMid;
+      }
+      .three-column-grid__expand-two > .box:nth-child(3) {
+        grid-area: mini2;
       }
 
       .five-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 5px;
       }
 
       .center-grid {
+        display: grid;
+        place-items: center;
       }
 
       .centered {
+        display:inline-block
       }
 
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
       .two-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
       }
+
+      .two-column-grid > .box:first-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+      }
+
+      .two-column-grid > .box:nth-child(2) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 5px;
+      }
+
+      .container.mainContainer {
+        display: grid;
+        grid-template-columns: 56px 1fr 168px;
+        grid-template-areas: "smol longBoi shortBoi";
+        gap: 5px;
+      }
+
+      .box.smol {
+        grid-area: smol;
+      }
+
+      .box.expand.longBoi {
+        grid-area: longBoi;
+      }
+
+      .box.shortBoi {
+        grid-area: shortBoi;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+      }
+
     </style>
   </head>
   <body>
@@ -130,14 +192,14 @@
     </div>
     <div>
       <h2>Grid within Grid #2 (Expansion)</h2>
-      <div class="container">
-        <div class="box">
+      <div class="container mainContainer">
+        <div class="box smol">
           <div class="inner-box"></div>
         </div>
-        <div class="box expand">
+        <div class="box expand longBoi">
           <div class="inner-box width-sm"></div>
         </div>
-        <div class="box">
+        <div class="box shortBoi">
           <div class="inner-box"></div>
           <div class="inner-box"></div>
           <div class="inner-box"></div>
