@@ -31,26 +31,100 @@
 
       /* Write CSS Here */
 
+      .two-column-grid__expand-two {
+        display: grid;
+        grid-template: 
+        "l r " 50px /
+        1fr 6fr
+        
+      }
+
+      .logo{
+        grid-area: l;
+        width: 160px;
+        height: 40px;
+        padding: 4px;
+        border: 2px dotted teal ;
+
+      }
+
+
       .three-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "left1 middle1 right1";
+        gap: 5px
       }
 
       .three-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 50px auto 50px;
+        grid-template-areas: 
+        "left1 middle1 right1";
+        gap: 5px
       }
 
       .five-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+        "leftmost3 left3 middle3 right3 rightmost3";
+        gap: 5px
       }
 
       .center-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 
+        "left4 middle4 right4";
       }
 
       .centered {
+        grid-area: middle4;
       }
 
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
       .two-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+        
       }
+
+      .two-column-grid .box:nth-of-type(1){
+  
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      
+      }
+
+      .two-column-grid .box:nth-of-type(2){
+    
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+      
+      } 
+
+      .container2{
+        padding: 8px;
+        border: 2px dotted lightblue;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 5px;
+      }
+
+
+      .container2 .box:nth-of-type(3){
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+      }
+
+      
+
     </style>
   </head>
   <body>
@@ -93,26 +167,31 @@
         <div class="box centered"></div>
       </div>
     </div>
+
     <div>
       <h2>Grid within Grid #1</h2>
       <div class="container two-column-grid">
-        <div class="box">
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-        </div>
-        <div class="box">
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-        </div>
+
+          
+              <div class="box">
+                <div class="inner-box">1</div>
+                <div class="inner-box">2</div>
+                <div class="inner-box">3</div>
+              </div>
+           
+
+              <div class="box">
+                <div class="inner-box">4</div>
+                <div class="inner-box">5</div>
+                <div class="inner-box">6</div>
+                <div class="inner-box">7</div>
+                <div class="inner-box">8</div>
+              </div>   
       </div>
-    </div>
+
     <div>
       <h2>Grid within Grid #2 (Expansion)</h2>
-      <div class="container">
+      <div class="container2">
         <div class="box">
           <div class="inner-box"></div>
         </div>
