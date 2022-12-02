@@ -30,27 +30,66 @@
       /* Don't touch this END */
 
       /* Write CSS Here */
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));;
+        gap: 5px;
+      }
+
+      .two-column-grid__expand-two {
+        grid-template-columns: 120px 1fr;
+      }
+
+      .logo {
+        border: 2px dotted green;
+      }
 
       .three-column-grid {
+        grid-template-columns: 1fr 1fr 1fr;
       }
 
       .three-column-grid__expand-two {
+        grid-template-columns: 50px 1fr 50px;
       }
 
       .five-column-grid {
+        grid-template-columns: repeat(5, 1fr);
       }
 
       .center-grid {
+        place-items: center;
       }
 
       .centered {
+        width: 350px;
       }
 
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
       .two-column-grid {
+        grid-template-columns: 1fr 1fr;
       }
+
+      .two-column-grid > .box
+      {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+        gap: 5px;
+      }
+
+      div:nth-of-type(7) > .container
+      {
+        grid-template-columns: 60px 1fr 175px;
+      }
+      div:nth-of-type(7) > .container>.box
+      {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+        gap: 5px;
+      }
+
+      
     </style>
   </head>
   <body>
