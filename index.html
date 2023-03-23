@@ -32,18 +32,41 @@
       /* Write CSS Here */
 
       .three-column-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+
       }
 
       .three-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 60px 1fr 60px;
+        gap: 4px;
+      }
+
+      .container.three-column-grid__expand-two {
+        border: 2px dotted red;
       }
 
       .five-column-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 4px;
+      }
+
+      .container.five-column-grid {
+        border: 2px dotted red;
       }
 
       .center-grid {
+        display: grid;
+        grid-template-columns: 300px;
+        align-content: center;
+        justify-content: center;
       }
 
       .centered {
+        border: 2px dotted red;
       }
 
       /* Grid within Grid Section */
@@ -51,6 +74,23 @@
 
       .two-column-grid {
       }
+
+      .two-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 4px; 
+      }
+
+      .logo {
+        border: 2px dotted lightgreen; 
+      }
+
+      .expand {
+        border: 2px dotted red;
+      }
+
+      
+
     </style>
   </head>
   <body>
