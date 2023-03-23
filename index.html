@@ -84,6 +84,21 @@
       /* Practice re-using classes */
 
       .two-column-grid {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:5px;
+      }
+
+      .two-column-grid > .box {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:5px;
+      }
+
+      .two-column-grid > .box + .box {
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        gap:5px;
       }
 
     </style>
