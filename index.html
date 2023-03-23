@@ -36,6 +36,8 @@
       .five-column-grid,
       .center-grid,
       .two-column-grid,
+      div + div + div + div + div + div + div > div.container,
+      div + div + div + div + div + div + div > div > div + div + div,
       .two-column-grid > .box {
         display: grid;
         column-gap: 5px;
@@ -68,14 +70,21 @@
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
-      .two-column-grid {
+      .two-column-grid  {
         grid-template-columns: 1fr 1fr;
       }
 
       .two-column-grid > .box {
         grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
       }
-      
+
+      div + div + div + div + div + div + div > div.container{
+        grid-template-columns: 60px 1fr 200px;
+      }
+      div + div + div + div + div + div + div > div > div + div + div {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
     </style>
   </head>
   <body>
