@@ -31,26 +31,79 @@
 
       /* Write CSS Here */
 
+      .two-column-grid__expand-two {
+        display:grid;
+        grid-template-columns: 150px 1fr;
+        gap: 5px
+      }
+
+      .logo {
+        border: dotted 2px green
+      }
+
       .three-column-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px
       }
 
       .three-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 50px 1fr 50px;
+        gap: 5px
       }
 
       .five-column-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px
       }
 
       .center-grid {
+        grid-template-columns: 220px;
+        display: grid;
+        justify-content: center;
       }
 
       .centered {
       }
 
+
+
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
       .two-column-grid {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px
       }
+
+    .two-column-grid > .box {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+        gap: 4px
+      }
+
+      div + div + div + div + div + div + div > .container {
+        display: grid;
+        grid-template-columns: 55px 1fr 150px;
+        gap: 5px
+
+      }
+
+      div + div + div + div + div + div + div > .container > .box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2px
+      }
+
+      div + div + div + div + div + div + div > .container > .expand {
+        display: grid;
+        grid-template-columns: 1fr
+      }
+
+
     </style>
   </head>
   <body>
