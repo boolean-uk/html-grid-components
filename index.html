@@ -27,30 +27,90 @@
         border: 2px dotted lightgreen;
       }
 
+      .logo {
+        min-width: 40px;
+        min-height: 40px;
+        border: 2px dotted lightgreen;
+      }
+
       /* Don't touch this END */
 
       /* Write CSS Here */
+      .two-column-grid__expand-two{
+        display: grid;
+        grid-template-columns: 116px 1fr;
+        gap: 5px;
+      }
 
       .three-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
       }
 
       .three-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 50px 1fr 50px;
+        gap: 5px;
       }
 
       .five-column-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
       }
 
       .center-grid {
+        display: grid;
+        gap: 5px;
+        place-items: center;
       }
 
       .centered {
+        width: 200px;
       }
 
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
       .two-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap 5px;
       }
+
+      .two-column-grid > .box:nth-child(1) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+      }
+
+      .two-column-grid > .box:nth-child(2) {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px;
+      }
+
+      .expansion {
+        display: grid;
+        grid-template-columns: 55px 1fr 0.2fr;
+        gap: 5px;
+      }
+
+      .expansion > .box:nth-child(1) {
+        display: grid;
+      }
+
+      .expansion > .box:nth-child(2) {
+        display: grid;
+      }
+
+      .expansion > .box:nth-child(3) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+      }
+
+
     </style>
   </head>
   <body>
@@ -112,7 +172,7 @@
     </div>
     <div>
       <h2>Grid within Grid #2 (Expansion)</h2>
-      <div class="container">
+      <div class="container expansion">
         <div class="box">
           <div class="inner-box"></div>
         </div>
