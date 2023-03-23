@@ -52,9 +52,16 @@
 
 
       .three-column-grid {
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:5px;
       }
 
       .three-column-grid__expand-two {
+        display:grid;
+        grid-template-columns: 50px 8fr 50px;
+        gap:5px;
+        
       }
 
       .five-column-grid {
