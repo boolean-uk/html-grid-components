@@ -57,6 +57,7 @@
       }
 
       .centered {
+       
       }
 
       /* Grid within Grid Section */
@@ -79,6 +80,15 @@
       /* Practice re-using classes */
 
       .two-column-grid {
+       
+      }
+      .two-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 5px
+      }
+      .two-column-grid__expand-two > .logo {
+        border: dotted 2px cyan
       }
     </style>
   </head>
