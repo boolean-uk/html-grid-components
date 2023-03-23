@@ -30,25 +30,33 @@
       /* Don't touch this END */
 
       /* Write CSS Here */
+      .two-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 50px 1fr;
+        column-gap: 5px;
+      }
 
       .three-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 5px;
       }
-
+      
       .three-column-grid__expand-two {
       }
-
+      
       .five-column-grid {
       }
-
+      
       .center-grid {
       }
-
+      
       .centered {
       }
-
+      
       /* Grid within Grid Section */
       /* Practice re-using classes */
-
+      
       .two-column-grid {
       }
     </style>
@@ -57,7 +65,7 @@
     <div>
       <h2>Two Column Grid (Icon Pattern)</h2>
       <div class="container two-column-grid__expand-two">
-        <div class="logo"></div>
+        <div class="box logo"></div>
         <div class="box expand"></div>
       </div>
     </div>
