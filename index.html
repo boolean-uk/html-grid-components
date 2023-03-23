@@ -52,27 +52,27 @@
 
 
       .three-column-grid {
-        display:grid;
+        display: grid;
         grid-template-columns: repeat(3,1fr);
         gap:5px;
       }
 
       .three-column-grid__expand-two {
-        display:grid;
+        display: grid;
         grid-template-columns: 50px 8fr 50px;
         gap:5px;
         
       }
 
       .five-column-grid {
-        display:grid;
+        display: grid;
         grid-template-columns: repeat(5,1fr);
         gap:5px;
       }
 
       .center-grid {
-        display:grid;
-        grid-template-columns: 100px;
+        display: grid;
+        grid-template-columns: 200px;
         gap:5px;
         place-content: center;
       }
@@ -100,6 +100,20 @@
         grid-template-columns: repeat(5,1fr);
         gap:5px;
       }
+
+      body > div + div + div + div + div + div + div > div {
+        display: grid;
+        grid-template-columns: 50px 8fr 150px;
+        gap:5px;
+      } 
+
+      body > div + div + div + div + div + div + div > div > .box + .box.expand + .box{
+        display: grid;
+        grid-template-columns: repeat(3,43px);
+        gap:5px;
+      }
+
+
 
     </style>
   </head>
@@ -163,17 +177,21 @@
     <div>
       <h2>Grid within Grid #2 (Expansion)</h2>
       <div class="container">
+
         <div class="box">
           <div class="inner-box"></div>
         </div>
+
         <div class="box expand">
           <div class="inner-box width-sm"></div>
         </div>
+
         <div class="box">
           <div class="inner-box"></div>
           <div class="inner-box"></div>
           <div class="inner-box"></div>
         </div>
+
       </div>
     </div>
   </body>
