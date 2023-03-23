@@ -33,8 +33,8 @@
 
       .three-column-grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 5px; 
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
       }
 
       .three-column-grid__expand-two {
@@ -62,7 +62,7 @@
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
-      .two-column-grid {        
+      .two-column-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
@@ -82,16 +82,25 @@
       .logo{
         border: dotted 2px green;
       }
-      .container > .box{
+      /* .container > .box{
         display: grid;
         grid-template-columns: repeat();
-      }
+      } */
       .container > .box.expand{
         grid-template-columns: 1fr;
       }
-      .container{
+      /* .container{
         display: grid;
+      } */
+
+    div:nth-child(7) > .container {
+        display: grid;
+        grid-template-columns: 55px 1fr 150px;
+        gap: 5px;
       }
+
+
+
 
     </style>
   </head>
