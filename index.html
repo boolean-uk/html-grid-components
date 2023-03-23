@@ -18,13 +18,13 @@
         min-width: 40px;
         min-height: 40px;
         padding: 4px;
-        border: 2px dotted lightcoral;
+        border: 2px solid lightcoral;
       }
 
       .inner-box {
         min-width: 40px;
         min-height: 40px;
-        border: 2px dotted lightgreen;
+        border: 2px solid lightgreen;
       }
 
       /* Don't touch this END */
@@ -60,6 +60,22 @@
       }
 
       /* Grid within Grid Section */
+
+      .container.two-column-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .container.two-column-grid > .box{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) ;
+        gap: 5px;
+      }
+
+      .container.two-column-grid > .box + .box{
+        display:grid;
+        grid-template-columns: repeat(5, 1fr);
+      }
       /* Practice re-using classes */
 
       .two-column-grid {
