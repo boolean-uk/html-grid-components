@@ -36,19 +36,36 @@
         column-gap: 5px;
       }
 
+      .logo {
+        border: 2px dotted lightcoral;
+      }
+
       .three-column-grid {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 5px;
+        grid-area: three-column-grid;
       }
       
       .three-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 50px 1fr 50px;
+        column-gap: 5px;
+
       }
       
       .five-column-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 5px;
+        grid-area: five-column-grid;
       }
       
       .center-grid {
+        display: grid;
+        grid-template-columns: 20%;
+        justify-content: center;
+        column-gap: 5px;
       }
       
       .centered {
@@ -58,14 +75,25 @@
       /* Practice re-using classes */
       
       .two-column-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
       }
+
+      .two-column-grid > .box {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+      }
+
+
+
+
     </style>
   </head>
   <body>
     <div>
       <h2>Two Column Grid (Icon Pattern)</h2>
       <div class="container two-column-grid__expand-two">
-        <div class="box logo"></div>
+        <div class="logo"></div>
         <div class="box expand"></div>
       </div>
     </div>
