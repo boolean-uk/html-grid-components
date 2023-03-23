@@ -35,7 +35,6 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 4px;
-
       }
 
       .three-column-grid__expand-two {
@@ -44,51 +43,60 @@
         gap: 4px;
       }
 
-      .container.three-column-grid__expand-two {
-        border: 2px dotted red;
-      }
-
       .five-column-grid {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 4px;
       }
 
-      .container.five-column-grid {
-        border: 2px dotted red;
-      }
-
       .center-grid {
         display: grid;
-        grid-template-columns: 300px;
+        grid-template-columns: 200px;
         align-content: center;
         justify-content: center;
-      }
-
-      .centered {
-        border: 2px dotted red;
       }
 
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
       .two-column-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+      }
+
+      .two-column-grid > .box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+      }
+
+      .two-column-grid > .box:last-child {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
       }
 
       .two-column-grid__expand-two {
         display: grid;
         grid-template-columns: 150px 1fr;
-        gap: 4px; 
+        gap: 4px;
       }
 
       .logo {
-        border: 2px dotted lightgreen; 
+        border: 2px dotted lightgreen;
       }
 
-      .expand {
-        border: 2px dotted red;
+      .last-child {
+        display: grid;
+        grid-template-columns: 1fr 9fr 3fr;
+        gap: 4px;
       }
 
+      .last-child > :last-child {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+      }
       
 
     </style>
@@ -141,7 +149,7 @@
           <div class="inner-box"></div>
           <div class="inner-box"></div>
         </div>
-        <div class="box">
+        <div class="box bottom">
           <div class="inner-box"></div>
           <div class="inner-box"></div>
           <div class="inner-box"></div>
@@ -152,7 +160,7 @@
     </div>
     <div>
       <h2>Grid within Grid #2 (Expansion)</h2>
-      <div class="container">
+      <div class="container last-child">
         <div class="box">
           <div class="inner-box"></div>
         </div>
