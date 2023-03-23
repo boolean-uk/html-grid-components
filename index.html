@@ -30,10 +30,18 @@
       /* Don't touch this END */
 
       /* Write CSS Here */
-      .two-column-grid__expand-two {
+      .two-column-grid__expand-two,
+      .three-column-grid,
+      .three-column-grid__expand-two,
+      .five-column-grid,
+      .center-grid,
+      .two-column-grid,
+      .two-column-grid > .box {
         display: grid;
-        grid-template-columns: 50px 1fr;
         column-gap: 5px;
+      }
+      .two-column-grid__expand-two {
+        grid-template-columns: 50px 1fr;
       }
 
       .logo {
@@ -41,52 +49,33 @@
       }
 
       .three-column-grid {
-        display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 5px;
-        grid-area: three-column-grid;
       }
-      
-      .three-column-grid__expand-two {
-        display: grid;
-        grid-template-columns: 50px 1fr 50px;
-        column-gap: 5px;
 
+      .three-column-grid__expand-two {
+        grid-template-columns: 50px 1fr 50px;
       }
-      
+
       .five-column-grid {
-        display: grid;
         grid-template-columns: repeat(5, 1fr);
-        column-gap: 5px;
-        grid-area: five-column-grid;
       }
-      
+
       .center-grid {
-        display: grid;
         grid-template-columns: 20%;
         justify-content: center;
-        column-gap: 5px;
       }
-      
-      .centered {
-      }
-      
+
       /* Grid within Grid Section */
       /* Practice re-using classes */
-      
+
       .two-column-grid {
-        display: grid;
         grid-template-columns: 1fr 1fr;
       }
 
       .two-column-grid > .box {
-        display: grid;
         grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
       }
-
-
-
-
+      
     </style>
   </head>
   <body>
