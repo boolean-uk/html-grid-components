@@ -11,20 +11,20 @@
 
       .container {
         padding: 8px;
-        border: 2px solid rgb(12, 91, 117);
+        border: 2px dotted lightblue;
       }
 
       .box {
         min-width: 40px;
         min-height: 40px;
         padding: 4px;
-        border: 2px solid lightcoral;
+        border: 2px dotted lightcoral;
       }
 
       .inner-box {
         min-width: 40px;
         min-height: 40px;
-        border: 2px solid lightgreen;
+        border: 2px dotted lightgreen;
       }
 
       /* Don't touch this END */
@@ -65,6 +65,7 @@
       .container.two-column-grid{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        gap: 5px;
       }
 
       .container.two-column-grid > .box{
@@ -88,8 +89,21 @@
         gap: 5px
       }
       .two-column-grid__expand-two > .logo {
-        border: dotted 2px cyan
+        border: dotted 2px lightblue
       }
+      
+      div + div + div + div + div + div + div > div.container{
+        display: grid;
+        grid-template-columns: 50px 1fr 200px;
+        gap: 5px;
+      }
+
+      div + div + div + div + div + div + div > div > div + div + div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+      }
+      
     </style>
   </head>
   <body>
