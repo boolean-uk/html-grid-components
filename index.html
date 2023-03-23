@@ -32,25 +32,78 @@
       /* Write CSS Here */
 
       .three-column-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
       }
 
       .three-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 50px 1fr 50px;
+        gap: 5px;
       }
 
       .five-column-grid {
+        display:  grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 5px
       }
 
       .center-grid {
+        display: grid;
+        grid-template-columns: 20%;
+        justify-content: center;
+        margin: 5px;
       }
 
       .centered {
+       
       }
 
       /* Grid within Grid Section */
+
+      .container.two-column-grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5px;
+      }
+
+      .container.two-column-grid > .box{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) ;
+        gap: 5px;
+      }
+
+      .container.two-column-grid > .box + .box{
+        display:grid;
+        grid-template-columns: repeat(5, 1fr);
+      }
       /* Practice re-using classes */
 
       .two-column-grid {
+       
       }
+      .two-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 5px
+      }
+      .two-column-grid__expand-two > .logo {
+        border: dotted 2px lightblue
+      }
+      
+      div + div + div + div + div + div + div > div.container{
+        display: grid;
+        grid-template-columns: 50px 1fr 200px;
+        gap: 5px;
+      }
+
+      div + div + div + div + div + div + div > div > div + div + div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 5px;
+      }
+      
     </style>
   </head>
   <body>
