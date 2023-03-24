@@ -86,13 +86,25 @@
         border: 2px dotted lightgreen;
       }
 
-      .last-child {
+      /* .last-child {
         display: grid;
         grid-template-columns: 1fr 9fr 3fr;
         gap: 4px;
       }
 
       .last-child > :last-child {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+      } */
+
+      body > div:last-child > .container {
+        display: grid;
+        grid-template-columns: 1fr 9fr 3fr;
+        gap: 4px;
+      }
+
+      body > div:last-child > .container > div:last-child {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 4px;
@@ -160,7 +172,7 @@
     </div>
     <div>
       <h2>Grid within Grid #2 (Expansion)</h2>
-      <div class="container last-child">
+      <div class="container">
         <div class="box">
           <div class="inner-box"></div>
         </div>
