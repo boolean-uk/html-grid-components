@@ -32,25 +32,73 @@
       /* Write CSS Here */
 
       .three-column-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
       }
 
       .three-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 60px 1fr 60px;
+        gap: 4px;
       }
 
       .five-column-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 4px;
       }
 
       .center-grid {
-      }
-
-      .centered {
+        display: grid;
+        grid-template-columns: 200px;
+        align-content: center;
+        justify-content: center;
       }
 
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
       .two-column-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
       }
+
+      .two-column-grid > .box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+      }
+
+      .two-column-grid > .box:last-child {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+      }
+
+      .two-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 4px;
+      }
+
+      .logo {
+        border: 2px dotted lightgreen;
+      }
+
+      body > div:last-child > .container {
+        display: grid;
+        grid-template-columns: 1fr 9fr 3fr;
+        gap: 4px;
+      }
+
+      body > div:last-child > .container > div:last-child {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 4px;
+      }
+      
+
     </style>
   </head>
   <body>
@@ -101,7 +149,7 @@
           <div class="inner-box"></div>
           <div class="inner-box"></div>
         </div>
-        <div class="box">
+        <div class="box bottom">
           <div class="inner-box"></div>
           <div class="inner-box"></div>
           <div class="inner-box"></div>
