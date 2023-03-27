@@ -30,34 +30,77 @@
       /* Don't touch this END */
 
       /* Write CSS Here */
+      .two-column-grid__expand-two{
+       display:grid;
+       grid-template-columns: 100px 1fr;
+       gap:10px;
+       border: 2px dotted lightcoral;
+    }
+    .logo{
+      border: 2px dotted rgb(53, 165, 109);
+    }
 
       .three-column-grid {
+        display:grid;
+        grid-template-columns: repeat(3,1fr);
+        gap:10px;
       }
 
       .three-column-grid__expand-two {
+      display:grid;
+      grid-template-columns:50px 1fr 50px;
+      gap:10px
       }
-
-      .five-column-grid {
+        .five-column-grid {
+          display:grid;
+          grid-template-columns: repeat(5,1fr);
+          gap:10px;
       }
 
       .center-grid {
+        display:grid;
+        grid-template-columns: 150px;
+        justify-content: center;
       }
 
       .centered {
+       
       }
-
+      
+      .boxexpand {
+        
+      }
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
-      .two-column-grid {
+      .two-column-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      
       }
+
+      .two-column-grid .box {
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        
+      }
+      .two-column-grid .box + .box{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+       
+      }
+    
+          
+      
     </style>
   </head>
   <body>
     <div>
       <h2>Two Column Grid (Icon Pattern)</h2>
       <div class="container two-column-grid__expand-two">
-        <div class="logo"></div>
+        <div class="logo">1</div>
         <div class="box expand"></div>
       </div>
     </div>
@@ -114,15 +157,15 @@
       <h2>Grid within Grid #2 (Expansion)</h2>
       <div class="container">
         <div class="box">
-          <div class="inner-box"></div>
+          <div class="inner-box">11</div>
         </div>
         <div class="box expand">
-          <div class="inner-box width-sm"></div>
+          <div class="inner-box width-sm">1</div>
         </div>
         <div class="box">
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
+          <div class="inner-box">111</div>
+          <div class="inner-box">1111</div>
+          <div class="inner-box">11111</div>
         </div>
       </div>
     </div>
