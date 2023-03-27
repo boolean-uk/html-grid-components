@@ -31,26 +31,79 @@
 
       /* Write CSS Here */
 
+      .two-column-grid__expand-two,
+      .two-column-grid__expand-two > .logo,
+      .two-column-grid__expand-two > .box .expand,
+      .three-column-grid,
+      .three-column-grid__expand-two,
+      .five-column-grid,
+      .center-grid,
+      .two-column-grid,
+      .two-column-grid > .box,
+      .two-column-grid > .box + .box,
+      body > div + div + div + div + div + div + div > div,
+      body > div + div + div + div + div + div + div > div > .box + .box.expand + .box {
+        display: grid;
+        gap: 5px;
+      }
+
+      .two-column-grid__expand-two {
+        grid-area: two-column-grid;
+        grid-template-columns: 1fr 5fr;
+        grid-template-areas: 
+        "first_logo box_expand";
+      }
+
+      .two-column-grid__expand-two > .logo {
+        grid-area: first_logo;
+        border: 2px dotted blue;
+      }
+
+      .two-column-grid__expand-two > .box .expand {
+        grid-area: box_expand;
+        background-color: red;
+       }
+
       .three-column-grid {
+        grid-template-columns: repeat(3,1fr);
       }
 
       .three-column-grid__expand-two {
+        grid-template-columns: 50px 8fr 50px;
       }
 
       .five-column-grid {
+        grid-template-columns: repeat(5,1fr);
       }
 
       .center-grid {
-      }
-
-      .centered {
+        grid-template-columns: 20%;
+        place-content: center;
       }
 
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
       .two-column-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
+
+        .two-column-grid > .box {
+          grid-template-columns: repeat(3,1fr);
+        }
+
+        .two-column-grid > .box + .box {
+          grid-template-columns: repeat(5,1fr);
+        }
+
+      body > div + div + div + div + div + div + div > div {
+        grid-template-columns: 50px 8fr 150px;
+      } 
+
+        body > div + div + div + div + div + div + div > div > .box + .box.expand + .box{
+          grid-template-columns: repeat(3,1fr);
+        }
+
     </style>
   </head>
   <body>
