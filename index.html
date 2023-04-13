@@ -31,44 +31,78 @@
 
       /* Write CSS Here */
 
-      .three-column-grid > .box {
+      .container {
         display: grid;
-        grid-template-columns: 30px 30px 30px;
-        border: dashed 3px red;
+        grid-template-rows: 1fr;
+        grid-template-columns: 50px 80% 1fr;
+      }
+
+      .box {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+
+      .two-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 10px;
+        border: 2px dotted lightcoral;
+      }
+      .logo {
+        border: 2px dotted rgb(53, 165, 109);
+      }
+
+      .three-column-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
       }
 
       .three-column-grid__expand-two {
+        display: grid;
+        grid-template-columns: 50px 1fr 50px;
+        gap: 10px;
       }
-
       .five-column-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
       }
 
       .center-grid {
+        display: grid;
+        grid-template-columns: 150px;
+        justify-content: center;
       }
 
       .centered {
       }
 
+      .boxexpand {
+      }
       /* Grid within Grid Section */
       /* Practice re-using classes */
 
       .two-column-grid {
         display: grid;
-        grid-template-columns: 20px 1fr;
-        grid-gap: 20px;
-        border: 3px solid black;
-        width: 20%;
-      }
-
-      .logo {
-        margin: 10px;
-        border: 1px solid red;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
       }
 
       .two-column-grid .box {
         display: grid;
+        grid-template-columns: repeat(3, 1fr);
         gap: 10px;
-        grid-template-columns: repeat (5 1fr);
+      }
+
+      .two-column-grid .box + .box {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        background-color: pink;
+      }
+
+      .container .box > inner-box > {
+        background-color: dodgerblue;
       }
     </style>
   </head>
@@ -76,7 +110,7 @@
     <div>
       <h2>Two Column Grid (Icon Pattern)</h2>
       <div class="container two-column-grid__expand-two">
-        <div class="logo"></div>
+        <div class="logo">1</div>
         <div class="box expand"></div>
       </div>
     </div>
@@ -133,15 +167,15 @@
       <h2>Grid within Grid #2 (Expansion)</h2>
       <div class="container">
         <div class="box">
-          <div class="inner-box"></div>
+          <div class="inner-box">11</div>
         </div>
         <div class="box expand">
-          <div class="inner-box width-sm"></div>
+          <div class="inner-box width-sm">1</div>
         </div>
         <div class="box">
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
-          <div class="inner-box"></div>
+          <div class="inner-box">111</div>
+          <div class="inner-box">1111</div>
+          <div class="inner-box">11111</div>
         </div>
       </div>
     </div>
