@@ -46,17 +46,51 @@
     /* Write CSS Here */
     /* Practice re-using classes */
 
-    .two-column-grid__expand-two {}
+    .two-column-grid__expand-two {  display: grid;
+  grid-template-columns: 300px 1fr; /* Set width of first column to 40px */
+  gap: 8px;
+}
+    
 
-    .three-column-grid {}
+    .three-column-grid {display: grid;
+  grid-template-columns: repeat(3, minmax(40px, 1fr));
+  gap: 8px;}
 
-    .three-column-grid__expand-two {}
+.three-column-grid__expand-two {
+  display:grid;
+      grid-template-columns:50px 1fr 50px;
+      gap:10px
+}
 
-    .five-column-grid {}
+    .five-column-grid { display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  gap: 8px;}
 
-    .center-grid {}
+    .center-grid {display:grid;
+        grid-template-columns: 250px;
+        justify-content: center; }
+  
 
-    .grid-in-grid-1 {}
+    .grid-in-grid-1 {  display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;}
+
+    
+        .grid-in-grid-1 .box {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .grid-in-grid-1 .box + .box{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+       
+      }
+
+      .container .box > inner-box > {
+        background-color: dodgerblue;
+      }
 
     .grid-in-grid-2 {}
 
