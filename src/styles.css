@@ -39,6 +39,11 @@
     https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 */
 
+body {
+  background-color: grey;
+  color: white;
+}
+
 .container {
   display: grid;
   gap: 8px;
@@ -89,19 +94,17 @@
 
 .grid-madness {
   grid-template-areas:
-  "header header header"
-  "left-bar main right-bar"
-  "footer footer footer";
-  grid-template-rows: 100px 1fr 80px;
+    "header header header"
+    "left-bar main right-bar"
+    "footer footer footer";
+  grid-template-rows: 80px 1fr 80px;
   grid-template-columns: 150px 1fr 250px;
 }
 
 /* box 1 footer*/
 .grid-madness > :nth-child(1) {
   grid-area: footer;
-  background-color: green;
-  grid-template-areas:
-  ". one two logo";
+  grid-template-areas: ". one two logo";
   grid-template-columns: 60% 1fr 1fr 75px;
 }
 
@@ -117,27 +120,21 @@
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   /* padding: 5px; */
-
-
 }
 
 .grid-madness > :nth-child(1) > :nth-child(3) {
   grid-area: two;
-
 }
-
 
 /* box 2 right-bar*/
 .grid-madness > :nth-child(2) {
   grid-area: right-bar;
-  background-color: yellow;
   grid-template-rows: 500px;
 }
 
 /* box 3 left-bar*/
 .grid-madness > :nth-child(3) {
   grid-area: left-bar;
-  background-color: blue;
   gap: 25px;
   /* grid-template-rows: repeat(3, 50px); */
   align-content: start;
@@ -145,12 +142,29 @@
 
 /* box 4 main*/
 .grid-madness > :nth-child(4) {
+  display: grid;
   grid-area: main;
-  background-color: pink;
+  grid-auto-rows: 80px;
 }
 
+.grid-madness > :nth-child(4) > .inner-box {
+  display: grid;
+  grid-template: 40px / 40px;
+  align-content: center;
+  padding-left: 20px;
+}
 /* box 5 header*/
 .grid-madness > :nth-child(5) {
+  display: grid;
   grid-area: header;
-  background-color: red;
+
+  grid-template-areas: "logo one two three four";
+  grid-template-columns: 75px repeat(4, minmax(120px, 15%));
+}
+
+.grid-madness > :nth-child(5) > :nth-child(3) {
+  display: grid;
+  grid-area: logo;
+
+  grid-template: 1fr / 1fr;
 }
