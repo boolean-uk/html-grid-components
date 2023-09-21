@@ -93,20 +93,31 @@
 
 .grid-madness > .box:nth-child(1) {
   grid-area: footer;
-  grid-template-areas: "rest last";
-  grid-template-columns: repeat(auto-fit, 100px) 50px;
+  display: grid;
+  grid-template-columns: 60px repeat(6, 1fr);
+  grid-template-rows: 1fr;
   place-content: end;
-}
-
-.grid-madness > .box:nth-child(1) > .inner-box:empty {
-  grid-area: rest;
-  background-color: yellow;
+  direction: rtl;
 }
 
 .grid-madness > .box:nth-child(1) > .inner-box:nth-child(2) {
-  grid-area: last;
-  place-self: end;
+  /* place-self: end; */
+  grid-column: 1;
+  grid-row: 1;
 }
+
+.grid-madness > .box:nth-child(1) > .inner-box:nth-child(1) {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.grid-madness > .box:nth-child(1) > .inner-box:nth-child(3) {
+  /* place-self: end; */
+  grid-column: 2;
+}
+
+
+
 
 .grid-madness > .box:nth-child(2) {
   grid-area: right;
