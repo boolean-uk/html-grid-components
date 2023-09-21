@@ -43,13 +43,15 @@
 
 .container  {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-columns: repeat(2, 1fr); */
+
+  grid-template-columns: 150px 1fr;
   grid-gap: 5px;
 }
 
 
 .two-column-grid__expand-two > .logo{
-  border: 1px dotted red;
+ 
 }
 
 
@@ -128,17 +130,26 @@
 
 .grid-in-grid-2 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* grid-template-rows: repeat(3, 90px) */
- 
+  
+  /* need to adjust the width of each column */
+  grid-template-columns: 70px 1fr 200px;
   
 }
 
-.grid-in-grid-2 > .box {
+
+.grid-in-grid-2 > .box:nth-child(1) {
   display: grid;
   grid-template-columns: auto;
   grid-gap: 5px;
+
+  /* background-color: red; */
   
+}
+
+.grid-in-grid-2 .box:nth-child(3) {
+/* background-color: red; */
+display: grid;
+grid-template-columns: repeat(3, 1fr);
 }
 
 /* Extension */
