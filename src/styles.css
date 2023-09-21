@@ -51,7 +51,11 @@
   gap: 10px;
 }
 
-.three-column-grid__expand-two {}
+.three-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 1fr 5000000fr 1fr;
+  gap: 10px;
+}
 
 .five-column-grid {}
 
