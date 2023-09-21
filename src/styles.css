@@ -47,6 +47,7 @@
 .box {
   display: grid;
   gap: 8px;
+  overflow: hidden;
 }
 
 .two-column-grid__expand-two {
@@ -86,6 +87,41 @@
   grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
 }
 
-
 .grid-madness {
+  grid-template-areas:
+  "header header header"
+  "left-bar main right-bar"
+  "footer footer footer";
+  grid-template-rows: 100px 1fr 100px;
+  grid-template-columns: 150px 1fr 250px;
+}
+
+/* box 1 footer*/
+.grid-madness > :nth-child(1) {
+  grid-area: footer;
+  background-color: green;
+}
+
+/* box 2 right-bar*/
+.grid-madness > :nth-child(2) {
+  grid-area: right-bar;
+  background-color: yellow;
+}
+
+/* box 3 left-bar*/
+.grid-madness > :nth-child(3) {
+  grid-area: left-bar;
+  background-color: blue;
+}
+
+/* box 4 main*/
+.grid-madness > :nth-child(4) {
+  grid-area: main;
+  background-color: pink;
+}
+
+/* box 5 header*/
+.grid-madness > :nth-child(5) {
+  grid-area: header;
+  background-color: red;
 }
