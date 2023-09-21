@@ -39,18 +39,108 @@
     https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 */
 
-.two-column-grid__expand-two {}
+/* Two Column Grid */
 
-.three-column-grid {}
+.container  {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 5px;
+}
 
-.three-column-grid__expand-two {}
 
-.five-column-grid {}
+.two-column-grid__expand-two > .logo{
+  border: 1px dotted red;
+}
 
-.center-grid {}
 
-.grid-in-grid-1 {}
 
-.grid-in-grid-2 {}
+.two-column-grid__expand-two > .box{
+ 
+}
+
+/* Three Column Grid */
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
+}
+
+/* Three Column Grid with Expansion  */
+.three-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  gap: 20px;
+
+}
+
+/* Five Column Grid */
+
+.five-column-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+/* Center-Grid */
+
+/* There is a grid within a grid here */
+/* Center-grid is the outer part and .box is the inner part */
+/* Have to make center-grid, a display: grid */
+/* And then grid-template-columns: auto */
+.center-grid {
+  display: grid;
+  grid-template-columns: auto;
+  }
+
+.center-grid  > .box{
+  display: grid;
+  grid-template-columns: 200px;
+  justify-self: center;
+
+  /* background-color: pink; */
+}
+
+/* Grid in grid-1 */
+
+.grid-in-grid-1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+}
+
+.grid-in-grid-1 > .box {
+  /* background-color: lightgoldenrodyellow; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5px;
+}
+
+.grid-in-grid-1 > .box + .box {
+ /* background-color: lightgreen; */
+ display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 5px;
+  
+}
+
+
+/* Grid in Grid-2 */
+
+.grid-in-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-rows: repeat(3, 90px) */
+ 
+  
+}
+
+.grid-in-grid-2 > .box {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 5px;
+  
+}
+
+/* Extension */
 
 .grid-madness {}
