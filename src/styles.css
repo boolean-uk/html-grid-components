@@ -39,9 +39,18 @@
     https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 */
 
-.two-column-grid__expand-two {}
+.container {
+  display: grid;
+  gap: 8px;
+}
 
-.three-column-grid {}
+.two-column-grid__expand-two {
+  grid-template-columns: 1fr 4fr;
+}
+
+.three-column-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
 
 .three-column-grid__expand-two {}
 
