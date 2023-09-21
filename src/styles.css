@@ -89,7 +89,7 @@
   "box box"
 }
 
-.grid-in-grid-1 > .box {
+.grid-in-grid-1 > :nth-child(1) {
   display: grid;
   gap: 5px;
   grid-template-columns: repeat(3, 1fr);
@@ -106,7 +106,17 @@
 }
 
 .grid-in-grid-2 {
-  
+  display: grid;
+  gap: 10px;
+  grid-template: 1fr / 1fr 4fr 2fr;
+}
+
+.grid-in-grid-2 > :nth-child(3) {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+  "inner-box inner-box inner-box"
 }
 
 .grid-madness {
