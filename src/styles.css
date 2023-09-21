@@ -39,18 +39,115 @@
     https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 */
 
-.two-column-grid__expand-two {}
+.two-column-grid__expand-two {
+  display: grid;
+  grid-template: "logo     box" 1fr/
+                  150px    1fr;
+  gap: 10px;
+}
 
-.three-column-grid {}
+.two-column-grid__expand-two .logo {
+  grid-area: logo;
+}
 
-.three-column-grid__expand-two {}
+.two-column-grid__expand-two .box {
+  grid-area: box;
+} 
 
-.five-column-grid {}
+@media screen and (max-width: 600px) {
+  .two-column-grid__expand-two {
+    grid-template:  "logo" 1fr
+                    "box"  1fr/
+                     1fr;
+    gap: 10px;
+  }
+}
 
-.center-grid {}
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
 
-.grid-in-grid-1 {}
+@media screen and (max-width: 600px) {
+  .three-column-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
 
-.grid-in-grid-2 {}
+.three-column-grid__expand-two {
+  display: grid;
+  grid-template: 
+  "box    box    box"  1fr/
+   50px   1fr     50px;
+   gap: 10px;
+}
+
+@media screen and (max-width: 600px){
+  .three-column-grid__expand-two {
+    grid-template: 
+    "box"
+    "box"
+    "box";
+  }
+}
+
+.five-column-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+@media screen and (max-width: 600px){
+  .five-column-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.center-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.centered {
+  width: 200px;
+}
+
+@media screen and (max-width: 600px){
+  .centered {
+    width: 100px;
+  }
+}
+
+.grid-in-grid-1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.grid-in-grid-1 .box:nth-child(1) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.grid-in-grid-1 .box:nth-child(2){
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.grid-in-grid-2 {
+  display: grid;
+  grid-template: 
+  "box   box   box" 1fr/
+  100px  1fr   200px;
+  gap: 10px;
+}
+
+.grid-in-grid-2 .box:nth-child(3) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 
 .grid-madness {}
