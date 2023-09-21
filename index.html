@@ -1,203 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>HTML Grid Components</title>
-
-  <style>
-    /* Don't touch this START */
-
-    .container {
-      padding: 8px;
-      border: 2px dotted lightblue;
-    }
-
-    .logo {
-      min-width: 40px;
-      min-height: 40px;
-      border: 2px dotted turquoise;
-    }
-
-    .box {
-      min-width: 40px;
-      min-height: 40px;
-      padding: 4px;
-      border: 2px dotted lightcoral;
-    }
-
-    .inner-box {
-      min-width: 40px;
-      min-height: 40px;
-      padding: 4px;
-      border: 2px dotted lightgreen;
-    }
-
-    .inner-logo {
-      min-width: 36px;
-      min-height: 36px;
-      border: 2px dotted turquoise;
-    }
-
-    /* Don't touch this END */
-
-    /* Write CSS Here */
-    /* Practice re-using classes */
-
-    .two-column-grid__expand-two {}
-
-    .three-column-grid {}
-
-    .three-column-grid__expand-two {}
-
-    .five-column-grid {}
-
-    .center-grid {}
-
-    .grid-in-grid-1 {}
-
-    .grid-in-grid-2 {}
-
-    .grid-madness {}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div>
-    <h2>Two Column Grid (Icon Pattern)</h2>
-    <div class="container two-column-grid__expand-two">
-      <div class="logo"></div>
-      <div class="box"></div>
-    </div>
-  </div>
-  <div>
-    <h2>Three Column Grid</h2>
-    <div class="container three-column-grid">
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-    </div>
-  </div>
-  <div>
-    <h2>Three Column Grid with Expansion</h2>
-    <div class="container three-column-grid__expand-two">
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-    </div>
-  </div>
-  <div>
-    <h2>Five Column Grid</h2>
-    <div class="container five-column-grid">
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-    </div>
-  </div>
-  <div>
-    <h2>Center Grid</h2>
-    <div class="container center-grid">
-      <div class="box centered"></div>
-    </div>
-  </div>
-  <div>
-    <h2>Grid within Grid #1</h2>
-    <div class="container grid-in-grid-1">
-      <div class="box">
-        <div class="inner-box"></div>
-        <div class="inner-box"></div>
-        <div class="inner-box"></div>
-      </div>
-      <div class="box">
-        <div class="inner-box"></div>
-        <div class="inner-box"></div>
-        <div class="inner-box"></div>
-        <div class="inner-box"></div>
-        <div class="inner-box"></div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <h2>Grid within Grid #2</h2>
-    <div class="container grid-in-grid-2">
-      <div class="box">
-        <div class="inner-box"></div>
-      </div>
-      <div class="box expand">
-        <div class="inner-box"></div>
-      </div>
-      <div class="box">
-        <div class="inner-box"></div>
-        <div class="inner-box"></div>
-        <div class="inner-box"></div>
-      </div>
-    </div>
-  </div>
-  <div>
-    <h2>Grid madness (extension)</h2>
-    <div class="container grid-madness">
-      <div class="box">
-        <div class="inner-box"></div>
-        <div class="inner-box">
-          <div class="inner-logo"></div>
-        </div>
-        <div class="inner-box"></div>
-      </div>
-      <div class="box">
-        <div class="inner-box"></div>
-      </div>
-      <div class="box">
-        <div class="inner-box"></div>
-        <div class="inner-box"></div>
-        <div class="inner-box"></div>
-      </div>
-      <div class="box">
-        <div class="inner-box">
-          <div class="inner-logo"></div>
-        </div>
-        <div class="inner-box">
-          <div class="inner-logo"></div>
-        </div>
-        <div class="inner-box">
-          <div class="inner-logo"></div>
-        </div>
-        <div class="inner-box">
-          <div class="inner-logo"></div>
-        </div>
-        <div class="inner-box">
-          <div class="inner-logo"></div>
-        </div>
-        <div class="inner-box">
-          <div class="inner-logo"></div>
-        </div>
-        <div class="inner-box">
-          <div class="inner-logo"></div>
-        </div>
-        <div class="inner-box">
-          <div class="inner-logo"></div>
-        </div>
-        <div class="inner-box">
-          <div class="inner-logo"></div>
-        </div>
-        <div class="inner-box">
-          <div class="inner-logo"></div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="inner-box"></div>
-        <div class="inner-box"></div>
-        <div class="inner-box">
-          <div class="inner-logo"></div>
-        </div>
-        <div class="inner-box"></div>
-        <div class="inner-box"></div>
-      </div>
-    </div>
-  </div>
-</body>
+    <h1>Two Column Grid (Icon Pattern)</h1>
 
+    <div class="two-column-grid">
+        <div class="oneLeft"></div>
+        <div class="oneRight"></div>
+    </div>
+
+    <h1>Three column Grid</h1>
+
+    <div class="three-column-grid">
+        <div class="twoLeft"></div>
+        <div class="twoMiddle"></div>
+        <div class="twoRight"></div>
+    </div>
+
+    <h1>Three Column Grid with Expansion</h1>
+
+    <div class="three-column-grid-with-expansion">
+        <div class="threeLeft"></div>
+        <div class="threeMiddle"></div>
+        <div class="threeRight"></div>
+    </div>
+
+    <h1>Five Column Grid</h1>
+
+    <div class="five-column-grid">
+        <div class="four-first"></div>
+        <div class="four-second"></div>
+        <div class="first-third"></div>
+        <div class="first-fourth"></div>
+        <div class="first-fifth"></div>
+    </div>
+
+    <h1>Center Grid</h1>
+
+    <div class="center-grid">
+        <div class="center-grid-box"></div>
+    </div>
+
+    <h1>Grid within Grid #1</h1>
+
+    <div class="grid-within-grid1">
+        <div class="first-grid">
+            <div class="within-a-grid-first"></div>
+            <div class="within-a-grid-second"></div>
+            <div class="within-a-grid-third"></div>
+        </div>
+
+        <div class="second-grid">
+            <div class="second-grid-first"></div>
+            <div class="second-grid-second"></div>
+            <div class="second-grid-third"></div>
+            <div class="second-grid-fourth"></div>
+            <div class="second-grid-fifth"></div>
+        </div>
+    </div>
+
+    <h1>Grid within Grid #2</h1>
+
+    <div class="grid-within-grid2">
+        <div class="single-grid">
+            <div class="single-grid-child"></div>
+        </div>
+        <div class="single-grid-middle">
+            <div class="single-grid-middle-child"></div>
+        </div>
+        <div class="final-grid">
+            <div class="final-grid-child1"></div>
+            <div class="final-grid-child2"></div>
+            <div class="final-grid-child3"></div>
+        </div>
+
+    </div>
+</body>
 </html>
