@@ -39,18 +39,143 @@
     https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 */
 
-.two-column-grid__expand-two {}
+.two-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-gap: 8px;
+}
 
-.three-column-grid {}
 
-.three-column-grid__expand-two {}
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 8px;
+}
 
-.five-column-grid {}
+.three-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-gap: 8px;
+}
 
-.center-grid {}
+.five-column-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 8px;
+}
 
-.grid-in-grid-1 {}
+.center-grid {
+  display: grid;
+  grid-template-columns: 200px;
+  grid-gap: 8px;
+  place-content: center;
+}
 
-.grid-in-grid-2 {}
+.grid-in-grid-1 {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 8px;
+}
 
-.grid-madness {}
+.grid-in-grid-1 > .box {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 8px;
+}
+
+.grid-in-grid-1 > .box:nth-of-type(2) {
+  grid-template-columns: repeat(5,1fr);
+}
+
+.grid-in-grid-2 {
+  display: grid;
+  grid-template-columns: 100px 1fr 300px;
+  grid-gap: 8px;
+}
+
+.grid-in-grid-2 > .box {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+}
+
+.grid-in-grid-2 > .expand {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+}
+
+.grid-in-grid-2 > .box:nth-of-type(3) {
+  grid-template-columns: repeat(3,1fr);
+}
+
+.grid-madness { 
+  display:grid;
+  grid-template-columns: 100px 1fr 200px;
+  grid-template-rows: 100px 1fr 100px;
+  grid-gap: 8px;
+}
+
+.grid-madness {
+  display: grid;
+  grid-template: 
+  
+  "header    header   header"   1fr
+  "sidebarL  content  sidebarR" 5fr
+  "footer    footer   footer"   1fr / 
+  1fr        6fr      1.75fr
+  ;
+
+  grid-gap: 8px;
+}
+
+.grid-madness > .box:nth-of-type(5) {
+  display: grid;
+  grid-area: header;
+  grid-template-columns: repeat(5,1fr);
+  grid-gap: 8px;
+}
+
+.grid-madness .box:nth-of-type(5) .inner-box:nth-of-type(3) {
+  display: grid;
+  grid-area: 1 / 1 / 2 / 1;
+}
+
+.grid-madness .box:nth-of-type(1) {
+  display: grid;
+  grid-area: footer;
+  justify-content: right;
+  grid-template-columns: repeat(2, 200px) 100px;
+  grid-gap: 8px;
+}
+
+.grid-madness .box:nth-of-type(1) .inner-box:nth-of-type(2) {
+  display: grid;
+  grid-area: 1 / 3 / 1 / 4;
+}
+
+.grid-madness .box:nth-of-type(3) {
+  display: grid;
+  grid-area: sidebarL;
+  grid-template-rows: repeat(3, 40px);
+  grid-gap: 30px;
+}
+
+.grid-madness .box:nth-of-type(2) {
+  display: grid;
+  grid-area: sidebarR;
+  grid-template-columns: 1fr;
+  grid-template-rows: 80%;
+  grid-gap: 8px;
+}
+
+.grid-madness .box:nth-of-type(4) {
+  grid-area: content;
+}
+
+.grid-madness .box:nth-of-type(4) .inner-box{
+  display: grid;
+  grid-template-columns: 40px;
+  justify-content: left;
+}
+
