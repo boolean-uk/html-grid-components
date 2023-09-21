@@ -52,13 +52,32 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-.three-column-grid__expand-two {}
+.three-column-grid__expand-two {
+  grid-template-columns: 50px 1fr 50px;
+}
 
-.five-column-grid {}
+.five-column-grid {
+  grid-template-columns: repeat(5, 1fr);
+}
 
-.center-grid {}
+.centered {
+  width: 200px;
+}
 
-.grid-in-grid-1 {}
+.center-grid {
+  justify-items: center;
+
+}
+
+.grid-in-grid-1 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-in-grid-1 > .box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 8px;
+}
 
 .grid-in-grid-2 {}
 
