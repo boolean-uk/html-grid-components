@@ -2,6 +2,8 @@
 .container {
   padding: 8px;
   border: 2px dotted lightblue;
+  display: grid;
+  grid-gap: 8px;
 }
 
 .logo {
@@ -30,8 +32,6 @@
   border: 2px dotted turquoise;
 }
 /* Don't touch this END */
-
-/* Write CSS Below Here */
 /*
 1. Practice re-using classes
 2. You cannot add new classes (since the HTML must not be changed)
@@ -39,18 +39,68 @@
     https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 */
 
-.two-column-grid__expand-two {}
+.two-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
-.three-column-grid {}
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
 
-.three-column-grid__expand-two {}
+.three-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; 
+}
 
-.five-column-grid {}
+.five-column-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
 
-.center-grid {}
+.center-grid {
+  display: grid;
+  place-items: center;
+  height: 80px;
+}
 
-.grid-in-grid-1 {}
+.center-grid .box {
+  height: 100%;
+  width: 60%; 
+}
 
-.grid-in-grid-2 {}
+.grid-in-grid-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+}
 
-.grid-madness {}
+.grid-in-grid-1 .box:first-child {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+}
+
+.grid-in-grid-1 .box:last-child {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+}
+
+.grid-in-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; 
+}
+
+.grid-in-grid-2 .box:first-child {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.grid-in-grid-2 .box:nth-child(2) {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.grid-in-grid-2 .box:last-child {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
