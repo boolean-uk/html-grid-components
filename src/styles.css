@@ -2,12 +2,14 @@
 .container {
   padding: 8px;
   border: 2px dotted lightblue;
+  
 }
 
 .logo {
   min-width: 40px;
   min-height: 40px;
   border: 2px dotted turquoise;
+  
 }
 
 .box {
@@ -35,18 +37,123 @@
 /* Practice re-using classes */
 /* Do not add any new classes or selectors */
 
-.two-column-grid__expand-two {}
+.two-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 10px;
+}
 
-.three-column-grid {}
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr) ;
+  gap: 10px;
+}
 
-.three-column-grid__expand-two {}
+.three-column-grid__expand-two {
+  display: grid;
+ /* grid-template-columns: 82px 1250px 82px ;*/
+  grid-template-columns: 1fr 3fr 1fr ;
+  gap: 10px;
+}
 
-.five-column-grid {}
+.five-column-grid {
+  display: grid;
+  grid-template-columns: repeat(5,1fr) ;
+  gap: 10px;
+}
 
-.center-grid {}
+.center-grid {
+  display: grid;
+  place-content: center;
+  grid-template-columns: 300px ;
+  }
+.grid-in-grid-1{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5px;
+}
+.grid-in-grid-1 .box:nth-child(1){
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 5px;
+}
+.grid-in-grid-1 .box:nth-child(2){
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  
+  gap: 5px;
+}
 
-.grid-in-grid-1 {}
+.grid-in-grid-2 {
+  display: grid;
+  
+  grid-template-columns: 1fr 6fr 3fr;
+  gap: 5px;
+}
+.grid-in-grid-2 .box:nth-child(1){
+  display: grid;
 
-.grid-in-grid-2 {}
+  gap: 5px;
+}
+.grid-in-grid-2 .box:nth-child(2){
+  display: grid;
+ 
+  gap: 5px;
+}
+.grid-in-grid-2 .box:nth-child(3){
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 5px;
 
-.grid-madness {}
+}
+
+.grid-madness {
+
+  display: grid;
+  grid-template: 
+  "header  header header" 
+  "left    main    right" 
+  "footer  footer   footer" ;
+   gap: 10px;
+}
+.grid-madness > .box:nth-child(5) {
+  display: grid;
+  grid-template: "1st 2nd 3rd 4th 5th " ;
+  grid-area: header;
+  gap: 10px;
+}
+.grid-madness > .box:nth-child(5) > .inner-box:nth-child(3) {
+  grid-area: 1st;
+  
+  }
+  .grid-madness > .box:nth-child(4) {
+    display: grid;
+    grid-area: main;
+  }
+  .grid-madness > .box:nth-child(4) >  .inner-box > .inner-logo  {
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    
+    
+    }
+   .grid-madness > .box:nth-child(3) {
+      display: grid;
+      grid-area: left;
+    }
+    grid-madness > .box:nth-child(2) {
+      display: grid;
+      grid-area: right;
+    }
+    grid-madness > .box:nth-child(1) {
+      display: grid;
+      grid-template-columns: 4fr 2fr 1fr ;
+      grid-area: footer;
+      gap: 10px;
+    }
+    grid-madness > .box:nth-child(5) > .inner-box:nth-child(1) {
+      grid-area: 5th;
+    
+      }
+
+      
