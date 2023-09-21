@@ -63,7 +63,14 @@
   gap: 10px;
 }
 
-.center-grid {}
+.center-grid {
+  display: grid; 
+}
+.centered {
+  display: grid; 
+  justify-self: center;
+  width: 30%;
+}
 
 .grid-in-grid-1 {}
 
