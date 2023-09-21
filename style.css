@@ -1,0 +1,263 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+}
+
+.two-column-grid {
+    display: grid;
+    grid-template: 80px / 20% 80%;
+    grid-template-areas: 
+    "oneLeft oneRight";
+    border-color: rgb(33, 255, 236);
+    border-style:dotted;
+    border-width: 2px;
+    padding: 8px;
+    gap: 8px;
+}
+
+.oneLeft {
+    border-color: rgb(0, 163, 178);
+    border-width: 1px;
+    border-style: dashed;
+}
+
+.oneRight {
+    border-color: rgb(207, 0, 0);
+    border-width: 1px;
+    border-style: dashed;
+    margin-right: 8px;
+}
+
+.three-column-grid {
+    display: grid;
+    grid-area: three-column-grid;
+    grid-template: 80px / 33% 33% 33%;
+    grid-template-areas: 
+    "twoLeft twoMiddle twoRight";
+    border-color: aqua;
+    border-style: dotted;
+    border-width: 2px;
+    padding: 8px;
+    gap: 8px;
+}
+
+.twoLeft {
+    border-color: rgb(255, 13, 0);
+    border-style: dotted;
+    border-width: 2px;
+}
+
+.twoMiddle {
+    border-color: rgb(255, 13, 0);
+    border-style: dotted;
+    border-width: 2px;
+}
+
+.twoRight {
+    border-color: rgb(255, 13, 0);
+    border-style: dotted;
+    border-width: 2px;
+    margin-right: 2px;
+}
+
+.three-column-grid-with-expansion {
+    display: grid;
+    grid-template: 80px / 10% 80% 10%;
+    grid-template-areas: 
+    "threeLeft threeMiddle threeRight";
+    border-color: aqua;
+    border-style: dotted;
+    border-width: 2px;
+    padding: 8px;
+    gap: 8px;
+}
+
+.threeLeft, .threeMiddle {
+    border-color: rgb(255, 13, 0);
+    border-style: dotted;
+    border-width: 2px;
+}
+
+.threeRight {
+    border-color: rgb(255, 13, 0);
+    border-style: dotted;
+    border-width: 2px;
+    margin-right: 15px;
+}
+
+.five-column-grid {
+    display: grid;
+    grid-template: 80px / 20% 20% 20% 20% 20%;
+    grid-template-areas: 
+    "four-first four-second four-third four-fourth four-fifth";
+    border-color: aqua;
+    border-style: dotted;
+    border-width: 2px;
+    padding: 8px;
+    gap: 8px;
+}
+
+.four-first, .four-second {
+    border-color: rgb(255, 13, 0);
+    border-style: dotted;
+    border-width: 2px;
+}
+
+.first-third, .first-fourth{
+    border-color: rgb(255, 13, 0);
+    border-style: dotted;
+    border-width: 2px;
+}
+
+.first-fifth {
+    border-color: rgb(255, 13, 0);
+    border-style: dotted;
+    border-width: 2px;
+    margin-right: 30px;
+}
+
+.center-grid {
+    display: grid;
+    grid-template: 80px / 20%;
+    grid-template-areas: 
+    "center-grid-box";
+    border-color: aqua;
+    border-style: dotted;
+    border-width: 2px;
+    padding: 8px;
+    gap: 8px;
+    justify-content: center;
+}
+
+.center-grid-box {
+    border-color: red;
+    border-width: 2px;
+    border-style: dotted;
+}
+
+.grid-within-grid1 {
+    display: grid;
+    grid-template: 80px / 50% 50%;
+    grid-template-areas: 
+    "first-grid second-grid";
+    border-color: aqua;
+    border-style: dotted;
+    border-width: 2px;
+    padding: 8px;
+    gap: 8px;
+}
+
+.first-grid {
+    border-color: rgb(255, 0, 0);
+    border-style: dotted;
+    border-width: 2px;
+    display: grid;
+    grid-template: 60px / 33% 33% 33%;
+    grid-template-areas: 
+    "within-a-grid-first within-a-grid-second within-a-grid-third";
+    grid-area: first-grid;
+    padding: 8px;
+    gap: 8px;
+} .second-grid { margin-right: 10px;}
+
+
+.within-a-grid-first, .within-a-grid-second, .within-a-grid-third {
+    border-color: rgb(27, 255, 34);
+    border-style: dotted;
+    border-width: 2px;
+}
+
+.within-a-grid-third {
+    margin-right: 8px
+}
+
+.second-grid {
+    border-color: rgb(255, 0, 0);
+    border-style: dotted;
+    border-width: 2px;
+    display: grid;
+    grid-template: 60px / 20% 20% 20% 20% 20%;
+    grid-template-areas: 
+    "within-a-grid-first within-a-grid-second within-a-grid-third";
+    grid-area: second-grid;
+    padding: 8px;
+    gap: 8px;
+}
+
+.second-grid-first, .second-grid-second, .second-grid-third, .second-grid-fourth, .second-grid-fifth {
+    border-color: rgb(27, 255, 34);
+    border-style: dotted;
+    border-width: 2px;
+} .second-grid-fifth { margin-right: 30px;}
+
+.grid-within-grid2 {
+    display: grid;
+    grid-template: 80px / 10% 70% 20%;
+    grid-template-areas: 
+    "single-grid child single-grid-middle-child final-grid";
+    border-color: aqua;
+    border-style: dotted;
+    border-width: 2px;
+    padding: 8px;
+    gap: 8px;
+}
+
+.single-grid {
+    border-color: rgb(245, 4, 4);
+    border-width: 2px;
+    border-style: dotted;
+    display: grid;
+    grid-template-areas: "single-grid-child";
+    grid-template: 60px / 100%;
+    gap: 8px;
+    justify-content: center;
+    padding: 8px;
+}
+
+.single-grid-child {
+    border-color: rgb(32, 245, 4);
+    border-width: 2px;
+    border-style: dotted;
+}
+
+.single-grid-middle {
+    border-color: rgb(245, 4, 4);
+    border-width: 2px;
+    border-style: dotted;
+    display: grid;
+    grid-template-areas: "single-grid-middle-child";
+    grid-template: 60px / 100%;
+    gap: 8px;
+    justify-content: center;
+    padding: 8px;
+}
+
+.single-grid-middle-child {
+    border-color: rgb(32, 245, 4);
+    border-width: 2px;
+    border-style: dotted;
+}
+
+.final-grid {
+    border-color: rgb(245, 4, 4);
+    border-width: 2px;
+    border-style: dotted;
+    display: grid;
+    grid-template-areas: "final-grid-child1 final-grid-child2 final-grid-child3";
+    grid-template: 60px / 33% 33% 33%;
+    gap: 8px;
+    justify-content: center;
+    padding: 8px;
+    margin-right: 17px;
+}
+
+.final-grid-child1, .final-grid-child2, .final-grid-child3 {
+    border-color: rgb(32, 245, 4);
+    border-width: 2px;
+    border-style: dotted;  
+    margin-left: 8px;  
+    margin-right: 8px
+}
