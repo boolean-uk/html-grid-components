@@ -57,7 +57,11 @@
   gap: 10px;
 }
 
-.five-column-grid {}
+.five-column-grid {
+  display: grid;
+  grid-template-columns:repeat(5 , 1fr) ;
+  gap: 10px;
+}
 
 .center-grid {}
 
