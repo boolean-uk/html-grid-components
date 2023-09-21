@@ -72,7 +72,23 @@
   width: 30%;
 }
 
-.grid-in-grid-1 {}
+.grid-in-grid-1 {
+  display: grid;
+  grid-template-columns: repeat(2 , 10fr);
+  gap: 10px;
+}
+
+.grid-in-grid-1 > .box:nth-of-type(1) {
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr ) ;
+  gap: 10px;
+}
+.grid-in-grid-1 > .box:nth-of-type(2) {
+  display: grid;
+  grid-template-columns: repeat(5,1fr) ;
+  gap: 10px;
+
+}
 
 .grid-in-grid-2 {}
 
