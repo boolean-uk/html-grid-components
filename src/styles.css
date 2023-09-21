@@ -35,18 +35,84 @@
 /* Practice re-using classes */
 /* Do not add any new classes or selectors */
 
-.two-column-grid__expand-two {}
+.two-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-gap: 8px;
+}
 
-.three-column-grid {}
 
-.three-column-grid__expand-two {}
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 8px;
+}
 
-.five-column-grid {}
+.three-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-gap: 8px;
+}
 
-.center-grid {}
+.five-column-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 8px;
+}
 
-.grid-in-grid-1 {}
+.center-grid {
+  display: grid;
+  grid-template-columns: 200px;
+  grid-gap: 8px;
+  place-content: center;
+}
 
-.grid-in-grid-2 {}
+.grid-in-grid-1 {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 8px;
+}
 
-.grid-madness {}
+.grid-in-grid-1 > .box {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 8px;
+}
+
+.grid-in-grid-1 > .box:nth-of-type(2) {
+  grid-template-columns: repeat(5,1fr);
+}
+
+.grid-in-grid-2 {
+  display: grid;
+  grid-template-columns: 100px 1fr 300px;
+  grid-gap: 8px;
+}
+
+.grid-in-grid-2 > .box {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+}
+
+.grid-in-grid-2 > .expand {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 8px;
+}
+
+.grid-in-grid-2 > .box:nth-of-type(3) {
+  grid-template-columns: repeat(3,1fr);
+}
+
+.grid-madness {
+  display:grid;
+  grid-template: 
+  
+  "box box box" 1fr
+  "box box box" repeat(3, 1fr)
+  "box box box" 1fr /
+  100px 1fr 200px;
+
+  grid-gap: 8px;
+}
