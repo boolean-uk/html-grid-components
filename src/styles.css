@@ -39,18 +39,66 @@
     https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 */
 
-.two-column-grid__expand-two {}
 
-.three-column-grid {}
+.two-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-area: "logo box";
+  grid-gap: 10px;
+}
 
-.three-column-grid__expand-two {}
+.three-column-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
 
-.five-column-grid {}
+.three-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  grid-gap: 10px;
+}
 
-.center-grid {}
+.five-column-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+}
 
-.grid-in-grid-1 {}
+.center-grid {
+  display: grid;
+  grid-template-columns: 400px;
+  justify-content: center;
+}
 
-.grid-in-grid-2 {}
+.grid-in-grid-1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+ grid-gap: 10px;
+}
 
-.grid-madness {}
+ .grid-in-grid-1  .box {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 10px;
+ }
+
+.grid-in-grid-1 .box:nth-of-type(2) {
+  grid-template-columns: repeat(5,1fr);
+}
+
+
+.grid-in-grid-2 {
+  display: grid;
+  grid-template-columns:  80px 1fr 200px;
+  gap: 10px;
+}
+
+.grid-in-grid-2  div {
+  display: grid;
+  grid-template-columns:  repeat(auto-fit, minmax(50px,1fr));
+  gap: 10px;
+}
+
+/*.grid-madness {}*/
+
