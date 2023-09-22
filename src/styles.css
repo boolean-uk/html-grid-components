@@ -39,18 +39,81 @@
     https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 */
 
-.two-column-grid__expand-two {}
+.two-column-grid__expand-two {
+  display: grid;
+  grid-template-columns:300px 1fr;
+  gap: 20px;
+  margin: auto;
+}
 
-.three-column-grid {}
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: auto;
+}
 
-.three-column-grid__expand-two {}
+.three-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 60px 1fr 60px;
+  gap: 20px;
+  margin: auto;
+}
 
-.five-column-grid {}
+.five-column-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+.five-column-grid{
 
-.center-grid {}
+}
 
-.grid-in-grid-1 {}
+.center-grid {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 200px;
+}
+.center-grid > .box{
+  display: grid;
+  grid-template-columns: 200px;
+  justify-self: center;
+}
 
-.grid-in-grid-2 {}
+.grid-in-grid-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+.grid-in-grid-1 > .box:nth-child(1){
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 5px;
+  
+}
 
-.grid-madness {}
+.grid-in-grid-1 > .box:nth-child(2){
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 5px;
+  
+}
+
+.grid-in-grid-2 {
+  display: grid;
+  grid-template-columns: 70px 1fr 200px;
+}
+.grid-in-grid-2 > .box:nth-child(1){
+  display: grid;
+  grid-template-columns: auto;
+  gap: 5px;
+
+}
+.grid-in-grid-2 > .box:nth-child(3){
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.grid-madness {
+  grid-area: first;
+}
