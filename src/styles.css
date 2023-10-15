@@ -39,18 +39,149 @@
     https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 */
 
-.two-column-grid__expand-two {}
+.two-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  gap: 10px;
+}
 
-.three-column-grid {}
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr);
+  gap: 10px;
+}
 
-.three-column-grid__expand-two {}
+.three-column-grid__expand-two {
+  display: grid;
+  grid-template-columns: 1fr 5000000fr 1fr;
+  gap: 10px;
+}
 
-.five-column-grid {}
+.five-column-grid {
+  display: grid;
+  grid-template-columns:repeat(5 , 1fr) ;
+  gap: 10px;
+}
 
-.center-grid {}
+.center-grid {
+  display: grid; 
+}
+.centered {
+  display: grid; 
+  justify-self: center;
+  width: 30%;
+}
 
-.grid-in-grid-1 {}
+.grid-in-grid-1 {
+  display: grid;
+  grid-template-columns: repeat(2 , 10fr);
+  gap: 10px;
+}
 
-.grid-in-grid-2 {}
 
-.grid-madness {}
+.grid-in-grid-1 > .box:nth-of-type(1) {
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr ) ;
+  gap: 10px;
+}
+.grid-in-grid-1 > .box:nth-of-type(2) {
+  display: grid;
+  grid-template-columns: repeat(5,1fr) ;
+  gap: 10px;
+
+}
+
+.grid-in-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 6fr 3fr;
+  gap: 10px;
+}
+
+.grid-in-grid-2 > .box:nth-child(1) {
+  display: grid; 
+}
+.grid-in-grid-2 > .box:nth-child(2) {
+  display: grid;
+}
+.grid-in-grid-2 > .box:nth-child(3) {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.grid-madness {
+  display: grid;
+ grid-template:"header header header" 1fr
+               "left    main  right " 5fr
+               "footer footer footer" 1fr /
+               1fr      6fr   2fr;
+  gap: 10px;
+}
+
+/*HEADER SECTION*/
+.grid-madness > .box:nth-child(5) {
+  display: grid;
+  grid-template: 
+  "first second third fourth fifth . " auto/
+   1fr   2fr     2fr   2fr   2fr  6fr;
+  grid-area: header;
+  gap: 10px;
+}
+.grid-madness > .box:nth-child(5) > .inner-box:nth-child(3) {
+grid-area: first;
+}
+.grid-madness .inner-logo {
+  height: 100%;
+}
+/*MAIN SECTION*/
+.grid-madness > .box:nth-child(4) {
+  display: grid;
+  grid-area: main;
+}
+
+.grid-madness > .box:nth-child(4) .inner-box{
+  display: grid;
+  align-content: center;
+}
+
+.grid-madness > .box:nth-child(4) >  .inner-box > .inner-logo  {
+min-width: 10px;
+min-height: 10px;
+width: 20px;
+height: 20px;
+margin: 0 0 auto 0;
+}
+
+/*LEFT SECTION*/
+.grid-madness > .box:nth-child(3) {
+  display: grid;
+  grid-area: left;
+  align-content: start;
+  gap: 10px; 
+}
+
+.grid-madness > .box:nth-child(3) > .inner-box {
+  display: grid;
+  height: 20%;
+}
+
+/*RIGHT SECTION*/
+.grid-madness > .box:nth-child(2) {
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  grid-area: right;
+}
+
+/*FOOTER SECTION*/
+.grid-madness > .box:nth-child(1) {
+  display: grid;
+  grid-template: 
+  "BO BOO BOOO" auto/
+  10% 10% 6%;
+  grid-area: footer;
+  gap: 10px;
+  justify-content: end;
+}
+.grid-madness > .box:nth-child(1) > .inner-box:nth-child(2) {
+  grid-area: BOOO;
+}
