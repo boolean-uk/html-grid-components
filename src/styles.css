@@ -29,6 +29,7 @@
   min-height: 36px;
   border: 2px dotted turquoise;
 }
+
 /* Don't touch this END */
 
 /* Write CSS Below Here */
@@ -39,18 +40,84 @@
     https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 */
 
-.two-column-grid__expand-two {}
+.two-column-grid__expand-two {
+  display: grid;
+  grid-template: "logo box" 1fr/1fr 3fr;
+  gap: 20px
+}
 
-.three-column-grid {}
+.three-column-grid {
+  display: grid;
+  grid-template: "box box box" 1fr/ 1fr 1fr 1fr;
+  gap: 20px
+}
 
-.three-column-grid__expand-two {}
+.three-column-grid__expand-two {
+  display: grid;
+  grid-template: "box box box" 1fr/ .03fr 1fr .03fr;
+  gap: 20px
+}
 
-.five-column-grid {}
+.five-column-grid {
+  display: grid;
+  grid-template: "box box box box box" 1fr/ 1fr 1fr 1fr 1fr 1fr;
+  gap: 20px
+}
 
-.center-grid {}
+.center-grid {
+  display: grid;
+  grid-template: "box" 1fr/ 1fr;
+  place-items: center;
+}
 
-.grid-in-grid-1 {}
+.center-grid .box {
+  width: 400px;
+}
 
-.grid-in-grid-2 {}
+.grid-in-grid-1 {
+  display: grid;
+  grid-template: "box box" auto/1fr 1fr;
+  gap: 20px;
+
+}
+
+.grid-in-grid-1 :first-child.box{
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.grid-in-grid-1 :nth-child(2).box{
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.grid-in-grid-2 {
+  display: grid;
+  grid-template: "box box box" 1fr/.10fr 1fr .25fr;
+  gap: 20px;
+}
+
+.grid-in-grid-2 :first-child.box {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 10px;
+}
+
+.grid-in-grid-2 :nth-child(2).box {
+  display: grid;
+  grid-template-rows: 1fr;
+  gap: 10px;
+}
+
+.grid-in-grid-2 :nth-child(3).box {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
 
 .grid-madness {}
