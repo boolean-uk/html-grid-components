@@ -1,33 +1,33 @@
 /* Don't touch this START */
 .container {
-  padding: 8px;
-  border: 2px dotted lightblue;
+	padding: 8px;
+	border: 2px dotted lightblue;
 }
 
 .logo {
-  min-width: 40px;
-  min-height: 40px;
-  border: 2px dotted turquoise;
+	min-width: 40px;
+	min-height: 40px;
+	border: 2px dotted turquoise;
 }
 
 .box {
-  min-width: 40px;
-  min-height: 40px;
-  padding: 4px;
-  border: 2px dotted lightcoral;
+	min-width: 40px;
+	min-height: 40px;
+	padding: 4px;
+	border: 2px dotted lightcoral;
 }
 
 .inner-box {
-  min-width: 40px;
-  min-height: 40px;
-  padding: 4px;
-  border: 2px dotted lightgreen;
+	min-width: 40px;
+	min-height: 40px;
+	padding: 4px;
+	border: 2px dotted lightgreen;
 }
 
 .inner-logo {
-  min-width: 36px;
-  min-height: 36px;
-  border: 2px dotted turquoise;
+	min-width: 36px;
+	min-height: 36px;
+	border: 2px dotted turquoise;
 }
 /* Don't touch this END */
 
@@ -39,18 +39,116 @@
     https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 */
 
-.two-column-grid__expand-two {}
+.container,
+.box {
+	display: grid;
+	gap: 1rem;
+}
 
-.three-column-grid {}
+.two-column-grid__expand-two {
+	grid-template-columns: 1fr 4fr;
+}
 
-.three-column-grid__expand-two {}
+.three-column-grid,
+.grid-in-grid-1 > *:first-child,
+.grid-in-grid-2 > *:last-child {
+	grid-template-columns: 1fr 1fr 1fr;
+}
 
-.five-column-grid {}
+.three-column-grid__expand-two {
+	grid-template-columns: auto 1fr auto;
+}
 
-.center-grid {}
+.five-column-grid,
+.grid-in-grid-1 > *:last-child {
+	grid-template-columns: repeat(5, 1fr);
+}
 
-.grid-in-grid-1 {}
+.center-grid {
+	grid-template-columns: 1fr;
+	place-items: center;
+}
 
-.grid-in-grid-2 {}
+.grid-in-grid-1 {
+	grid-template-columns: 1fr 1fr;
+}
 
-.grid-madness {}
+.grid-in-grid-2 {
+	grid-template-columns: auto 3fr 1fr;
+}
+
+/* ================================= */
+.grid-madness {
+	grid-template-areas:
+		"top top top"
+		"left middle right"
+		"bot bot bot";
+	grid-template-columns: auto 1ft auto;
+}
+
+.grid-madness > *:nth-child(1) {
+	grid-area: bot;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-areas: ". . . a b c";
+	justify-content: end;
+	background-color: rgba(80, 51, 76, 0.6);
+}
+
+.grid-madness > *:nth-child(1) > *:nth-child(1) {
+	grid-area: a;
+}
+.grid-madness > *:nth-child(1) > *:nth-child(2) {
+	grid-area: c;
+}
+.grid-madness > *:nth-child(1) > *:nth-child(3) {
+	grid-area: b;
+}
+
+.grid-madness > *:nth-child(2) {
+	grid-area: right;
+	grid-template-rows: 5fr 1fr;
+	background-color: #33a9;
+}
+.grid-madness > *:nth-child(3) {
+	grid-area: left;
+	grid-template-rows: 3rem 3rem 3rem;
+	gap: 2rem;
+	background-color: #a339;
+}
+.grid-madness > *:nth-child(4) {
+	grid-area: middle;
+	grid-template-rows: repeat(fill, 1fr);
+	background-color: rgba(30, 59, 59, 0.6);
+	gap: 0.12rem;
+}
+.grid-madness > *:nth-child(4) > * {
+	display: grid;
+	grid-template-columns: 1rem;
+	grid-template-rows: 1rem;
+}
+
+.grid-madness > *:nth-child(5) {
+	grid-area: top;
+	grid-template-columns: 5% repeat(4, 10%);
+	grid-template-rows: 1fr;
+
+	grid-template-areas: "a b c d e";
+
+	background-color: rgba(79, 79, 33, 0.6);
+}
+
+.grid-madness > *:nth-child(5) > *:nth-child(1) {
+	grid-area: c;
+}
+.grid-madness > *:nth-child(5) > *:nth-child(2) {
+	grid-area: b;
+}
+.grid-madness > *:nth-child(5) > *:nth-child(3) {
+	grid-area: a;
+}
+.grid-madness > *:nth-child(5) > *:nth-child(4) {
+	grid-area: d;
+}
+.grid-madness > *:nth-child(5) > *:nth-child(5) {
+	grid-area: e;
+}
