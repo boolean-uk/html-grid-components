@@ -39,18 +39,74 @@
     https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Selectors
 */
 
-.two-column-grid__expand-two {}
+.two-column-grid__expand-two {
+  display: grid;
+  grid-template:
+  'header header' 50px /
+  500px 1fr;
+  gap: 10px;
+  padding: 10px;
+}
 
-.three-column-grid {}
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
+  gap: 10px;
+  padding: 10px;
+}
 
-.three-column-grid__expand-two {}
+.three-column-grid__expand-two {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  padding: 10px;
+  grid-template:
+  'header header header' 50px /
+  50px 1fr 50px;
+}
 
-.five-column-grid {}
+.five-column-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
 
-.center-grid {}
+.center-grid {
+  display: grid;
+  grid-template: 
+  'header' 50px /
+  300px;
+  justify-content: center;
+}
 
-.grid-in-grid-1 {}
+.grid-in-grid-1 {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px;
+}
 
-.grid-in-grid-2 {}
+.grid-in-grid-1 .box {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  padding: 10px;
+}
+.grid-in-grid-2 {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template: 'header header header' 80px /
+  80px 1fr 200px;
+  gap: 10px;
+  padding: 10px;
+}
 
+.grid-in-grid-2 .box {
+  display: grid;
+  grid-auto-flow: column;
+  padding: 10px;
+  gap: 10px;
+}
 .grid-madness {}
